@@ -64,6 +64,30 @@ class SQLAPI {
 			return $errorString;
 		}
 		return $insertAutoincrementID;
-	}	
+	}
+
+	// $values has to be an associative array
+	function insertOrUpdateTipp($values){
+		$commaSeparatedColumns = implode(',',array_keys($values));
+		$commaSeparatedValues = implode('","',array_values($values));
+		$updateString = "";
+		for($i = 0;$i < count($values);$i++){
+			$column = array_keys($values)[$i];
+			$value = array_values($values)[$i];
+			$updateString = $updateString . $column . '=' . $value;
+			if($i < count($values) - 1){
+				$updateString = $updateString . ',';
+			};
+		}
+		$sql = sprintf('INSERT INTO Tipp (%s) VALUES ("%s") ON DUPLICATE KEY UPDATE %s',$commaSeparatedColumns, $commaSeparatedValues, $updateString);
+		$insertAutoincrementID = null;
+		try{
+			$insertAutoincrementID = $this->executeInsertSQL($sql);
+		} catch(Exception $e){
+			$errorString = '[From Server] Insert or Update to Tipp table failed with error: '.$e->getMessage();
+			return $errorString;
+		}
+		return $insertAutoincrementID;
+	}		
 }
 ?>

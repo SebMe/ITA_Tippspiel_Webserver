@@ -58,13 +58,13 @@ if(isset($postdata)){
 	// Client tries to create or update Tipps
 	if(isset($request->createOrUpdateTipps) && isset($request->tipps)){
 		$sqlAPI = new SQLAPI();
-		$tablename = "Tipp";
 		$tipps = $request->tipps;
-		for($i=0;$i<count($tipps);$i++){
+		$i = 0;
+		for(;$i<count($tipps);$i++){
 			$tippAsArray = (array)$tipps[$i];
-			$data = $sqlAPI->insertTableContent($tablename, $tippAsArray);
+			$data = $sqlAPI->insertOrUpdateTipp($tippAsArray);
 		};
-		echo($data);
+		echo($i);
 	}
 }
 ?>
