@@ -42,15 +42,16 @@ class SQLAPI {
 	}
 	
 	function getTableContent($tablename, $version){
-		$sql = sprintf('SELECT * FROM %s WHERE version > %s', $tablename, $version);
+		$sql = sprintf('SELECT * FROM %s WHERE version > \'%s\'', $tablename, $version);
 		$result = $this->executeSQL($sql);
+		$rows = [];
 		while($row = $result->fetch_array(MYSQLI_ASSOC)){
 			$rows[] = $row;
 		}
 		return json_encode($rows);
 	}
 	
-	// $values has to be an associated array
+	// $values has to be an associative array
 	function insertTableContent($tablename, $values){
 		$commaSeparatedColumns = implode(',',array_keys($values));
 		$commaSeparatedValues = implode('","',array_values($values));
@@ -64,52 +65,5 @@ class SQLAPI {
 		}
 		return $insertAutoincrementID;
 	}	
-	
-	/*
-	function updateBenutzerTable($values){
-		// values is a 2 dimensional array: values[0] = [0]user1, [1]pass1, .., values[1] = [0]user2, [1]pass2, .., 
-		foreach($values as $row){
-			$commaSeparatedColumns = implode(',',array_keys($row));
-			$commaSeparatedValues = implode('","',array_values($row));
-			$sql = sprintf(
-			'INSERT INTO benutzer (%s) VALUES ("%s")',$commaSeparatedColumns, $commaSeparatedValues);
-			try{
-				$result = $this->executeSQL($sql);
-			} catch(Exception $e){
-				$resultString = '[From Server] Update to Benutzer table failed with error: '.$e->getMessage();
-				return $resultString;
-			}
-		}
-		return '[From Server] Update to Benutzer table successfull.';
-	}	
-	
-	function updateTipprundeTable(){
-		
-	}
-	
-	function updateTippsTable(){
-		
-	}
-	
-	function getBenutzerTable($version){
-		
-	}
-	
-	function getTipprundenTable($version){
-		
-	}
-	
-	function getTippsTable($version){
-		
-	}
-	
-	function getTableVersions(){
-		$sql = 'select * from table_versions';
-		$result = $this->executeSQL($sql);
-		while($row = $result->fetch_array(MYSQLI_ASSOC)){
-			$rows[] = $row;
-		}
-		return json_encode($rows);
-	}*/
 }
 ?>
