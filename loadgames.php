@@ -88,63 +88,63 @@ function getTeams ($matchesArray)
 }
 
 list($eins, $zwei, $drei, $vier, $bild_eins, $bild_zwei, $bild_drei, $bild_vier) = getTeams($matchesArray1);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = $bild_eins";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = '$bild_eins'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = $bild_zwei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = '$bild_zwei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = $bild_drei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = '$bild_drei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = $bild_vier";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = '$bild_vier'";
 $mysqli->query($sql);
 
 list($eins, $zwei, $drei, $vier, $bild_eins, $bild_zwei, $bild_drei, $bild_vier) = getTeams($matchesArray2);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = $bild_eins";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = '$bild_eins'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = $bild_zwei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = '$bild_zwei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = $bild_drei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = '$bild_drei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = $bild_vier";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = '$bild_vier'";
 $mysqli->query($sql);
 
 list($eins, $zwei, $drei, $vier, $bild_eins, $bild_zwei, $bild_drei, $bild_vier) = getTeams($matchesArray3);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = $bild_eins";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = '$bild_eins'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = $bild_zwei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = '$bild_zwei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = $bild_drei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = '$bild_drei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = $bild_vier";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = '$bild_vier'";
 $mysqli->query($sql);
 
 list($eins, $zwei, $drei, $vier, $bild_eins, $bild_zwei, $bild_drei, $bild_vier) = getTeams($matchesArray4);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = $bild_eins";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = '$bild_eins'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = $bild_zwei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = '$bild_zwei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = $bild_drei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = '$bild_drei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = $bild_vier";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = '$bild_vier'";
 $mysqli->query($sql);
 
 list($eins, $zwei, $drei, $vier, $bild_eins, $bild_zwei, $bild_drei, $bild_vier) = getTeams($matchesArray5);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = $bild_eins";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = '$bild_eins'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = $bild_zwei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = '$bild_zwei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = $bild_drei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = '$bild_drei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = $bild_vier";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = '$bild_vier'";
 $mysqli->query($sql);
 
 list($eins, $zwei, $drei, $vier, $bild_eins, $bild_zwei, $bild_drei, $bild_vier) = getTeams($matchesArray6);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = $bild_eins";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$eins', '$bild_eins') ON DUPLICATE KEY UPDATE mannschaft_name = '$eins', mannschaft_flagge = '$bild_eins'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = $bild_zwei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$zwei', '$bild_zwei') ON DUPLICATE KEY UPDATE mannschaft_name = '$zwei', mannschaft_flagge = '$bild_zwei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = $bild_drei";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$drei', '$bild_drei') ON DUPLICATE KEY UPDATE mannschaft_name = '$drei', mannschaft_flagge = '$bild_drei'";
 $mysqli->query($sql);
-$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = $bild_vier";
+$sql = "INSERT INTO Mannschaft(mannschaft_name, mannschaft_flagge) VALUES ('$vier', '$bild_vier') ON DUPLICATE KEY UPDATE mannschaft_name = '$vier', mannschaft_flagge = '$bild_vier'";
 $mysqli->query($sql);
 
 
@@ -154,7 +154,7 @@ $mysqli->query($sql);
 $sql = "INSERT INTO Europameisterschaft(europameisterschaft_jahr, europameisterschaft_ort) VALUES ('2016', 'Frankreich')";
 $mysqli->query($sql);
 
-
+// Suche Mannschaftsname in Tabelle Mannschaft und gebe id aus
 function getMannschaftID($name)
 {
 	$select = "SELECT mannschaft_id FROM Mannschaft WHERE mannschaft_name = '$name'";
@@ -185,11 +185,13 @@ function fillBegegnung($matchesArray, $gruppeID){
 		$tore1 = $i[MatchResults][1][PointsTeam1];
 		$tore2 = $i[MatchResults][1][PointsTeam2];
 		
+		// Gab es eine Verlaengerung, wenn ja aendere Ergebnis
 		if ($i[MatchResults][2] != null){
 			$tore1 = $i[MatchResults][2][PointsTeam1];
 			$tore2 = $i[MatchResults][2][PointsTeam2];
 		}
 		
+		// Gab es Elfmeterschiessen, wenn ja aendere Ergebnis nochmal
 		if ($i[MatchResults][3] != null){
 			$tore1 = $i[MatchResults][3][PointsTeam1];
 			$tore2 = $i[MatchResults][3][PointsTeam2];
@@ -222,5 +224,185 @@ fillBegegnung($matchesArray8, 8);
 fillBegegnung($matchesArray9, 9);
 fillBegegnung($matchesArray10, 10);
 
- 
+// Aktualisieren des fehlerhaften Spielergebnisses aus der openligaDb
+$sql = "UPDATE Begegnung SET begegnung_tore_heimmannschaft= 5, begegnung_tore_auswaertsmannschaft = 6 WHERE begegnung_id = 37";
+try{
+	$sqlAPI = new SQLAPI();
+	$sqlAPI->executeSQL($sql);	
+} catch(Exception $e){
+	echo($e->getMessage());
+}
+
+
+// Füllen der Zwischentabelle "Gruppe_enthaelt_Mannschaft"
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray1);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE gruppe_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE gruppe_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE gruppe_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE gruppe_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray2);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (2, '$teamID1') ON DUPLICATE KEY UPDATE gruppe_fid = 2, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (2, '$teamID2') ON DUPLICATE KEY UPDATE gruppe_fid = 2, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (2, '$teamID3') ON DUPLICATE KEY UPDATE gruppe_fid = 2, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (2, '$teamID4') ON DUPLICATE KEY UPDATE gruppe_fid = 2, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray3);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (3, '$teamID1') ON DUPLICATE KEY UPDATE gruppe_fid = 3, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (3, '$teamID2') ON DUPLICATE KEY UPDATE gruppe_fid = 3, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (3, '$teamID3') ON DUPLICATE KEY UPDATE gruppe_fid = 3, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (3, '$teamID4') ON DUPLICATE KEY UPDATE gruppe_fid = 3, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray4);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (4, '$teamID1') ON DUPLICATE KEY UPDATE gruppe_fid = 4, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (4, '$teamID2') ON DUPLICATE KEY UPDATE gruppe_fid = 4, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (4, '$teamID3') ON DUPLICATE KEY UPDATE gruppe_fid = 4, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (4, '$teamID4') ON DUPLICATE KEY UPDATE gruppe_fid = 4, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray5);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (5, '$teamID1') ON DUPLICATE KEY UPDATE gruppe_fid = 5, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (5, '$teamID2') ON DUPLICATE KEY UPDATE gruppe_fid = 5, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (5, '$teamID3') ON DUPLICATE KEY UPDATE gruppe_fid = 5, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (5, '$teamID4') ON DUPLICATE KEY UPDATE gruppe_fid = 5, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray6);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (6, '$teamID1') ON DUPLICATE KEY UPDATE gruppe_fid = 6, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (6, '$teamID2') ON DUPLICATE KEY UPDATE gruppe_fid = 6, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (6, '$teamID3') ON DUPLICATE KEY UPDATE gruppe_fid = 6, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Gruppe_enthaelt_Mannschaft(gruppe_fid, mannschaft_fid) VALUES (6, '$teamID4') ON DUPLICATE KEY UPDATE gruppe_fid = 6, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+
+// Füllen der Zwischentabelle "Europameisterschaft_beinhaltet_Mannschaft"
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray1);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray2);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray3);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray4);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray5);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
+list($team1, $team2, $team3, $team4, , , , ) = getTeams($matchesArray6);
+$teamID1 = getMannschaftID($team1);
+$teamID2 = getMannschaftID($team2);
+$teamID3 = getMannschaftID($team3);
+$teamID4 = getMannschaftID($team4);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID1') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID1'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID2') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID2'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID3') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID3'";
+$mysqli->query($sql);
+$sql = "INSERT INTO Europameisterschaft_beinhaltet_Mannschaft(europameisterschaft_fid, mannschaft_fid) VALUES (1, '$teamID4') ON DUPLICATE KEY UPDATE europameisterschaft_fid = 1, mannschaft_fid = '$teamID4'";
+$mysqli->query($sql);
+
 ?>
