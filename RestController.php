@@ -18,27 +18,25 @@ if(isset($postdata)){
 		$sqlAPI = new SQLAPI();
 		$data = $sqlAPI->getTableContent($request->tablename, $request->version);
 		
-		// If the Benutzer table was requested, cut off the email and passwort
-		if($request->tablename == 'Benutzer'){
+		// If the Tipp table was requested
+		if($request->tablename == 'Tipp'){
 			$dataAsArray = json_decode($data, true);
 			for($i=0;$i<count($dataAsArray);$i++){
-				unset($dataAsArray[$i]["benutzer_passwort"]);
-				unset($dataAsArray[$i]["benutzer_mailadresse"]);
+				$dataAsArray[$i]["status"] = 'committed'; // Client has this row to know what data is already present on the server (offline created tipps on the client have status = not_committed)
 			}
-			$data = json_encode($dataAsArray);
-		};
-		
-		// If the Tipp table was requested, cut off the Tipps that belong to the user (he already has them, we dont want to override them)
-		if($request->tablename == 'Tipp' && isset($request->benutzer_id)){
-			$dataAsArray = json_decode($data, true);
-			$cuttedDataAsArray = array();
-			for($i=0;$i<count($dataAsArray);$i++){
-				if($dataAsArray[$i]["benutzer_fid"] != $request->benutzer_id){
-					$dataAsArray[$i]["status"] = 'committed'; // Client has this row to know what data is already present on the server (offline created tipps on the client have status = not_committed)
-					$cuttedDataAsArray[] = $dataAsArray[$i];
+			// Cut off the Tipps that belong to the user (he already has them, we dont want to override them
+			if(isset($request->benutzer_id)){
+				$cuttedDataAsArray = array();
+				for($i=0;$i<count($dataAsArray);$i++){
+					if($dataAsArray[$i]["benutzer_fid"] != $request->benutzer_id){
+						$dataAsArray[$i]["status"] = 'committed'; // Client has this row to know what data is already present on the server (offline created tipps on the client have status = not_committed)
+						$cuttedDataAsArray[] = $dataAsArray[$i];
+					}
 				}
+				$dataAsArray = $cuttedDataAsArray;
 			}
-			$data = json_encode($cuttedDataAsArray);
+
+			$data = json_encode($dataAsArray);
 		};
 		
 		// If the benutzer_spielt_tipprunde table was requested, calculate the punkte for all users before data is returned to the client
@@ -46,6 +44,9 @@ if(isset($postdata)){
 			$data = $sqlAPI->getTableContent($request->tablename, 0);
 			$dataAsArray = json_decode($data, true);
 			
+			// Get all Tipps
+			$tipps = $sqlAPI->getTableContent('Tipp', 0);
+
 			
 			$cuttedDataAsArray = array();
 			for($i=0;$i<count($dataAsArray);$i++){
@@ -86,12 +87,30 @@ if(isset($postdata)){
 	if(isset($request->createOrUpdateTipps) && isset($request->tipps)){
 		$sqlAPI = new SQLAPI();
 		$tipps = $request->tipps;
-		$i = 0;
-		for(;$i<count($tipps);$i++){
+		$successfullInsertOrUpdates = 0;
+		for($i=0;$i<count($tipps);$i++){
 			$tippAsArray = (array)$tipps[$i];
-			$data = $sqlAPI->insertOrUpdateTipp($tippAsArray);
+			$insertUpdateReturn = $sqlAPI->insertOrUpdateTipp($tippAsArray);
+			if($insertUpdateReturn == 0){
+				$successfullInsertOrUpdates++;
+			}
 		};
-		echo($i);
+		echo($successfullInsertOrUpdates);
+	}
+	
+	
+	// Client tries to create a BenutzerSpieltTipprunde entry
+	if(isset($request->createBenutzerSpieltTipprunde) && isset($request->dataToInsert)){
+		$sqlAPI = new SQLAPI();
+		$tablename = "benutzer_spielt_tipprunde";
+		$data = $request->dataToInsert;
+		$dataArray = (array) $data;
+		$returnedData = $sqlAPI->insertTableContent($tablename, $dataArray);
+		if(is_numeric($returnedData)){
+			echo('success');
+		}else{
+			echo($returnedData);
+		}
 	}
 }
 ?>

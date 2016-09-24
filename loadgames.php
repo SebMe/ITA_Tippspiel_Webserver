@@ -2,8 +2,8 @@
 require_once("SQLAPI.php");
 
 // Connect to server
-//$mysqli = new mysqli('127.0.0.1', 'root', 'password');
-$mysqli = new mysqli('127.0.0.1', 'ita', 'itaem2016');
+$mysqli = new mysqli('127.0.0.1', 'root', 'password');
+//$mysqli = new mysqli('127.0.0.1', 'ita', 'itaem2016');
 if($mysqli->connect_error){
 	var_dump($mysqli->connect_error);
 }

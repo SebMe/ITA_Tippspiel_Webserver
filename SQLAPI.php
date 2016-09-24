@@ -89,5 +89,18 @@ class SQLAPI {
 		}
 		return $insertAutoincrementID;
 	}		
+	
+	// to be tested
+	function getTippWithBegegnungResult(){
+		$sql = 'SELECT t.benutzer_fid, t.tipprunde_fid, t.tipp_tore_heimmannschaft, t.tipp_tore_auswaertsmannschaft,
+		b.begegnung_tore_heimmannschaft, b.begegnung_tore_auswaertsmannschaft FROM tipp t 
+		JOIN begegnung b ON t.begegnung_fid = b.begegnung_id';
+		$result = $this->executeSQL($sql);
+		$rows = [];
+		while($row = $result->fetch_array(MYSQLI_ASSOC)){
+			$rows[] = $row;
+		}
+		return json_encode($rows);
+	}
 }
 ?>
