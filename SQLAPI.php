@@ -67,7 +67,7 @@ class SQLAPI {
 	}
 
 	// $values has to be an associative array
-	function insertOrUpdateTipp($values){
+	function insertOrUpdateTable($tablename, $values){
 		$commaSeparatedColumns = implode(',',array_keys($values));
 		$commaSeparatedValues = implode('","',array_values($values));
 		$updateString = "";
@@ -79,18 +79,17 @@ class SQLAPI {
 				$updateString = $updateString . ',';
 			};
 		}
-		$sql = sprintf('INSERT INTO Tipp (%s) VALUES ("%s") ON DUPLICATE KEY UPDATE %s',$commaSeparatedColumns, $commaSeparatedValues, $updateString);
+		$sql = sprintf('INSERT INTO %s (%s) VALUES ("%s") ON DUPLICATE KEY UPDATE %s',$tablename, $commaSeparatedColumns, $commaSeparatedValues, $updateString);
 		$insertAutoincrementID = null;
 		try{
 			$insertAutoincrementID = $this->executeInsertSQL($sql);
 		} catch(Exception $e){
-			$errorString = '[From Server] Insert or Update to Tipp table failed with error: '.$e->getMessage();
+			$errorString = '[From Server] Insert or Update to '.$tablename.' table failed with error: '.$e->getMessage();
 			return $errorString;
 		}
 		return $insertAutoincrementID;
 	}		
 	
-	// to be tested
 	function getTippWithBegegnungResult(){
 		$sql = 'SELECT t.benutzer_fid, t.tipprunde_fid, t.tipp_tore_heimmannschaft, t.tipp_tore_auswaertsmannschaft,
 		b.begegnung_tore_heimmannschaft, b.begegnung_tore_auswaertsmannschaft FROM tipp t 

@@ -40,22 +40,49 @@ if(isset($postdata)){
 		};
 		
 		// If the benutzer_spielt_tipprunde table was requested, calculate the punkte for all users before data is returned to the client
-		if($request->tablename == 'benutzer_spielt_tipprunde'){
-			$data = $sqlAPI->getTableContent($request->tablename, 0);
-			$dataAsArray = json_decode($data, true);
+		if($request->tablename == 'Benutzer_spielt_Tipprunde'){		
+			// Get all Tipps with results
+			$tipps = $sqlAPI->getTippWithBegegnungResult();
+			$tippsAsArray = json_decode($tipps, true);
 			
-			// Get all Tipps
-			$tipps = $sqlAPI->getTableContent('Tipp', 0);
+			// Calc all Benutzer_spielt_Tipprunde punkte
+			$benutzerSpieltTipprundeAsArray = array();
+			for($i=0;$i<count($tippsAsArray);$i++){
+				$punkte = 0;
+				$goalDifferenceTipp = $tippsAsArray[$i]["tipp_tore_heimmannschaft"] - $tippsAsArray[$i]["tipp_tore_auswaertsmannschaft"];
+				$goalDifferenceResult = $tippsAsArray[$i]["begegnung_tore_heimmannschaft"] - $tippsAsArray[$i]["begegnung_tore_auswaertsmannschaft"];
+				// Correct goal difference, 1 Point
+				($goalDifferenceTipp == $goalDifferenceResult) ? $punkte++ : 0;
+				// Correct winner, 1 Point
+				($goalDifferenceTipp > 0 && $goalDifferenceResult > 0 || $goalDifferenceTipp < 0 && $goalDifferenceResult < 0) ? $punkte++ : 0;
+				// Correct Draw, 1 Point
+				($goalDifferenceTipp == 0 && $goalDifferenceResult == 0) ? $punkte++ : 0;				
+				// Correct Result, 1 Point
+				($tippsAsArray[$i]["tipp_tore_heimmannschaft"] == $tippsAsArray[$i]["begegnung_tore_heimmannschaft"] && $tippsAsArray[$i]["tipp_tore_auswaertsmannschaft"] == $tippsAsArray[$i]["begegnung_tore_auswaertsmannschaft"]) ? $punkte++ : 0;
 
-			
-			$cuttedDataAsArray = array();
-			for($i=0;$i<count($dataAsArray);$i++){
-				if($dataAsArray[$i]["benutzer_fid"] != $request->benutzer_id){
-					$dataAsArray[$i]["status"] = 'committed'; // Client has this row to know what data is already present on the server (offline created tipps on the client have status = not_committed)
-					$cuttedDataAsArray[] = $dataAsArray[$i];
+				// Add the points in the result array
+				$pointsAdded = false;
+				for($x=0;$i<count($benutzerSpieltTipprundeAsArray);$x++){
+					if($benutzerSpieltTipprundeAsArray[x]['benutzer_fid'] == $tippAsArray[i]['benutzer_fid'] && 
+						$benutzerSpieltTipprundeAsArray[x]['tipprunde_fid'] == $tippAsArray[i]['tipprunde_fid']){
+							$benutzerSpieltTipprundeAsArray[x]['punkte'] += $punkte;
+							$pointsAdded = true;
+						}
+				}
+				
+				if($pointsAdded == false){
+					$tableEntry = array();
+					$tableEntry['benutzer_fid'] = $tippsAsArray[$i]['benutzer_fid'];
+					$tableEntry['tipprunde_fid'] = $tippsAsArray[$i]['tipprunde_fid'];
+					$tableEntry['punkte'] = $punkte;
+					$benutzerSpieltTipprundeAsArray[] = $tableEntry;
 				}
 			}
-			$data = json_encode($cuttedDataAsArray);
+			// Insert the new calculated punkte
+			for($x=0;$x<count($benutzerSpieltTipprundeAsArray);$x++){
+				$response = $sqlAPI->insertOrUpdateTable('Benutzer_spielt_Tipprunde', $benutzerSpieltTipprundeAsArray[$x]);
+			}
+			$data = $sqlAPI->getTableContent($request->tablename, $request->version);
 		};
 		
 		echo($data);
@@ -90,14 +117,13 @@ if(isset($postdata)){
 		$successfullInsertOrUpdates = 0;
 		for($i=0;$i<count($tipps);$i++){
 			$tippAsArray = (array)$tipps[$i];
-			$insertUpdateReturn = $sqlAPI->insertOrUpdateTipp($tippAsArray);
+			$insertUpdateReturn = $sqlAPI->insertOrUpdateTable('Tipp', $tippAsArray);
 			if($insertUpdateReturn == 0){
 				$successfullInsertOrUpdates++;
 			}
 		};
 		echo($successfullInsertOrUpdates);
-	}
-	
+	}	
 	
 	// Client tries to create a BenutzerSpieltTipprunde entry
 	if(isset($request->createBenutzerSpieltTipprunde) && isset($request->dataToInsert)){
